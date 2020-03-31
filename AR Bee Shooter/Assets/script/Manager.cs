@@ -32,19 +32,21 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < 0)
+        if (playing)
         {
-            playing = false;
-            //EndCanvas.SetActive(true);
-            //UICanvas.SetActive(false);
-            //scoretext.text=
-        }
-        if (!playing)
-            UI.EndGame();
-        else {
-            timer -= Time.deltaTime;
-            UI.setTimer(timer);
+            if (timer < 0)
+            {
+                playing = false;
 
+            }
+            if (!playing)
+                UI.EndGame();
+            else
+            {
+                timer -= Time.deltaTime;
+                UI.setTimer(timer);
+
+            }
         }
         
     }
